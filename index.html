@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="row" style="margin-top:7%;">
+      <div class="col s12 m6 l4 offset-l2">
+        <img src="images/logo.png" alt="" width="100%">
+      </div>
+      <div class="col s12 m6 l4 flow-text">
+        <h3>Hi, TK here.</h3>
+        <p>I live in Burlington, VT with my fianc&eacute;e and
+          <a class="modal-trigger" href="#modalcat">cat.</a></p>
+
+        <!-- Modal Structure -->
+        <div id="modalcat" class="modal">
+          <div class="modal-content">
+            <img src="images/oscar2.jpg" alt="" width="100%">
+          </div>
+        </div>
+
+        <h4 class="card-panel amber">We're getting <a href="http://www.perryandtom.com">married!</a></h4>
+        <p>I work at <a href="https://www.pathwaysvermont.org">Pathways Vermont.</a></p>
+        <p>Check out what I'm <a href="https://github.com/tkinvt/">working on these days.</a></p>
+        <p>Take a look at my trips to
+          <a href="https://tkinfr.tumblr.com"> France
+          </a> and
+          <a href="https://pandtinspain.tumblr.com/">Spain.
+          </a></p>
+      </div>
+    </div>
+
+</div>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script>
+$(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+</body>
+</html>
