@@ -1,54 +1,189 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+<!DOCTYPE html>
+<html lang="en">
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>TKinVT.com</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <style type="text/css">
+
+    body {
+      font-family: 'Raleway', sans-serif;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .block-wrap {
+      margin-bottom: 15px;
+    }
+
+    .block {
+      width: 100%;
+      height: 100%;
+    }
+
+    .block-front, .block-back {
+      width: 100%;
+      height: 100%;
+    }
+
+    .block-back {
+      display: none;
+      background-color: #e0e0e0;
+    }
+
+    .back-card {
+      padding: 12px;
+    }
+
+    .sub-title {
+      margin-top:0px;
+      font-style:italic;
+      font-size:80%;
+    }
+
+  </style>
+
 </head>
 
 <body>
-<div class="container">
+  <div class="container container-fluid">
+    <div class="row" style="margin-top:13%;">
 
-    <div class="row" style="margin-top:7%;">
-      <div class="col s12 m6 l4 offset-l2">
-        <img src="images/logo.png" alt="" width="100%">
-      </div>
-      <div class="col s12 m6 l4 flow-text">
-        <p>Yep, I'm Tom. The eponymous TK.</p>
-        <p>I live in Burlington, VT with my wife and
-          <a class="modal-trigger" href="#modalcat">cat.</a></p>
+      <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-1 col-lg col-lg-offset-0">
+        <div class="block">
 
-        <!-- Modal Structure -->
-        <div id="modalcat" class="modal">
-          <div class="modal-content">
-            <img src="images/oscar2.jpg" alt="" width="90%">
-          </div>
+            <img src="images/logo.png" alt="" width="100%;" height="100%;">
+
         </div>
-
-        <p>I work at <a href="https://www.pathwaysvermont.org">Pathways Vermont.</a></p>
-        <p>I have <a href="https://soccer.tkinvt.com">thoughts on soccer.</a></p>
-        <p>Take a look at my trips to
-          <a href="https://tkinfr.tumblr.com"> France
-          </a> and
-          <a href="https://pandtinspain.tumblr.com/">Spain.
-          </a></p>
       </div>
-    </div>
 
-</div>
+      <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg">
+        <div class="block">
 
-<!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<script>
-$(document).ready(function(){
-    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-    $('.modal').modal();
+          <div class="block-front">
+            <img src="images/home_icon.png" alt="" width="100%;" height="100%;">
+          </div>
+
+          <div class="block-back">
+            <div class="back-card">
+              <h2>Hi, I'm Tom.</h2>
+                <p class="sub-title">the eponymous TK.</p>
+                <p>I live in Burlington, VT with my wife and cat.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 col-lg">
+        <div class="block">
+
+          <div class="block-front">
+            <img src="images/work_icon.png" alt="" width="100%;" height="100%;">
+          </div>
+
+          <div class="block-back">
+            <div class="back-card">
+              <h2>Work</h2>
+                <p class="sub-title">how the sausage gets made</p>
+                <p>I keep the technology running at
+                  <a href="https://www.pathwaysvermont.org">Pathways Vermont</a>
+                  , a statewide non-profit organization</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg col-lg-offset-0">
+        <div class="block">
+
+          <div class="block-front">
+            <img src="images/ideas_icon.png" alt="" width="100%;" height="100%;">
+          </div>
+
+          <div class="block-back">
+            <div class="back-card">
+              <h2>Ideas</h2>
+                <p class="sub-title">get a load of what I'm thinking</p>
+                <p>About soccer at
+                  <a href="https://soccer.tkinvt.com">soccer.tkinvt.com</a>
+                </p>
+                <p>or on Twitter
+                  <a href="https://twitter.com/TKinVT">@tkinvt</a></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 col-lg">
+        <div class="block">
+
+          <div class="block-front">
+            <img src="images/code_icon.png" alt="" width="100%;" height="100%;">
+          </div>
+
+          <div class="block-back">
+            <div class="back-card">
+              <h2 style="margin-bottom:0px;">Code</h2>
+                <p class="tk-sub-title">forays in python and webdev</p>
+                <p>Checkout my
+                  <a href="https://github.com/tkinvt">github page</a>
+                </p>
+                <p>Or these guys I made:
+                  <a href="https://soccer.tkinvt.com">soccer blog</a>, <a href="https://blocks.tkinvt.com">block app</a>
+                </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  var delay=500, timeoutConst;
+
+  $('.block').hover(function() {
+    var front = $('.block-front', this)
+    var back = $('.block-back', this)
+    timeoutConst = setTimeout(function() {
+      front.hide();
+      back.show();
+    }, delay);
+  },
+    function() {
+      clearTimeout(timeoutConst);
+      var front = $('.block-front', this)
+      var back = $('.block-back', this)
+      back.hide();
+      front.show();
   });
+
+});
+
 </script>
+
 </body>
+
 </html>
