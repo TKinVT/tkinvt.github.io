@@ -45,7 +45,7 @@
 
     .block-back {
       display: none;
-      background-color: #e0e0e0;
+      background-color: #e1e1e1;
     }
 
     .back-card {
@@ -57,6 +57,54 @@
       font-style:italic;
       font-size:80%;
     }
+
+    /* Outline In */
+    .hvr-outline-in {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      position: relative;
+    }
+    .hvr-outline-in:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      border: #e1e1e1 solid 4px;
+      top: -16px;
+      right: -16px;
+      bottom: -16px;
+      left: -16px;
+      opacity: 0;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: top, right, bottom, left;
+      transition-property: top, right, bottom, left;
+    }
+    .hvr-outline-in:hover:before, .hvr-outline-in:focus:before, .hvr-outline-in:active:before {
+      top: -8px;
+      right: -8px;
+      bottom: -8px;
+      left: -8px;
+      opacity: 1;
+    }
+
+    /* Glow */
+    .hvr-glow {
+      display: inline-block;
+      vertical-align: middle;
+      -webkit-transform: perspective(1px) translateZ(0);
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: box-shadow;
+      transition-property: box-shadow;
+    }
+    .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
 
   </style>
 
@@ -75,7 +123,7 @@
       </div>
 
       <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-0 col-lg">
-        <div class="block">
+        <div class="block hvr-outline-in">
 
           <div class="block-front">
             <img src="images/home_icon.png" alt="" width="100%;" height="100%;">
@@ -93,7 +141,7 @@
       </div>
 
       <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 col-lg">
-        <div class="block">
+        <div class="block hvr-outline-in">
 
           <div class="block-front">
             <img src="images/work_icon.png" alt="" width="100%;" height="100%;">
@@ -113,7 +161,7 @@
       </div>
 
       <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-1 col-lg col-lg-offset-0">
-        <div class="block">
+        <div class="block hvr-outline-in">
 
           <div class="block-front">
             <img src="images/ideas_icon.png" alt="" width="100%;" height="100%;">
@@ -135,7 +183,7 @@
       </div>
 
       <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-0 col-lg">
-        <div class="block">
+        <div class="block hvr-outline-in">
 
           <div class="block-front">
             <img src="images/code_icon.png" alt="" width="100%;" height="100%;">
@@ -162,22 +210,12 @@
 
 $(document).ready(function() {
 
-  var delay=500, timeoutConst;
+  $('.block').click(function() {
 
-  $('.block').hover(function() {
-    var front = $('.block-front', this)
-    var back = $('.block-back', this)
-    timeoutConst = setTimeout(function() {
-      front.hide();
-      back.show();
-    }, delay);
-  },
-    function() {
-      clearTimeout(timeoutConst);
-      var front = $('.block-front', this)
-      var back = $('.block-back', this)
-      back.hide();
-      front.show();
+    $('.block-back[style="display: block;"]').hide();
+    $('.block-front[style="display: none;"]').show();
+    $('.block-front', this).toggle();
+    $('.block-back', this).toggle();
   });
 
 });
