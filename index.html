@@ -115,7 +115,7 @@
     <div class="row" style="margin-top:13%;">
 
       <div class="block-wrap col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-1 col-lg col-lg-offset-0">
-        <div class="block">
+        <div class="block" id="tkinvt">
 
             <img src="images/logo.png" alt="" width="100%;" height="100%;">
 
@@ -210,12 +210,24 @@
 
 $(document).ready(function() {
 
+  var block_height = $('#tkinvt').height();
+  $('.block-back').height(block_height);
+
   $('.block').click(function() {
 
-    $('.block-back[style="display: block;"]').hide();
-    $('.block-front[style="display: none;"]').show();
-    $('.block-front', this).toggle();
-    $('.block-back', this).toggle();
+    if ($(this).hasClass('flipped') == false) {
+      $('.flipped > .block-back').hide();
+      $('.flipped > .block-front').show();
+      $('.flipped').removeClass('flipped')
+
+      $(this).addClass('flipped');
+    }
+
+    var front = $('.block-front', this);
+    var back = $('.block-back', this);
+    front.toggle();
+    back.toggle();
+
   });
 
 });
