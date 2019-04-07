@@ -90,21 +90,29 @@
       opacity: 1;
     }
 
-    /* Glow */
-    .hvr-glow {
-      display: inline-block;
-      vertical-align: middle;
-      -webkit-transform: perspective(1px) translateZ(0);
-      transform: perspective(1px) translateZ(0);
-      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-      -webkit-transition-duration: 0.3s;
-      transition-duration: 0.3s;
-      -webkit-transition-property: box-shadow;
-      transition-property: box-shadow;
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
-    .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-}
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 300px;
+    }
 
   </style>
 
@@ -133,7 +141,7 @@
             <div class="back-card">
               <h2>Hi, I'm Tom.</h2>
                 <p class="sub-title">the eponymous TK.</p>
-                <p>I live in Burlington, VT with my wife and cat.</p>
+                <p>I live in Burlington, VT with my wife and <a href="#" id="modalLink">cat.</a></p>
             </div>
           </div>
 
@@ -205,6 +213,13 @@
         </div>
       </div>
 
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+    <img src="images/oscar.jpg" alt="" width="100%" height="100%">
+  </div>
+
+</div>
 
 <script type="text/javascript">
 
@@ -228,6 +243,16 @@ $(document).ready(function() {
     front.toggle();
     back.toggle();
 
+  });
+
+  $('#modalLink').click(function() {
+    $('#myModal').css('display','block');
+  });
+
+  $("*").click(function(e) {
+    if (e.target.classList[0] == "modal") {
+      $('#myModal').css('display', 'none');
+    }
   });
 
 });
